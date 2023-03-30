@@ -250,7 +250,7 @@
 {% macro hive__list_views_without_caching(schema) %}
   {% call statement('list_views_without_caching', fetch_result=True) -%}
     -- show views  in {{ schema }}
-    select '' as tab_name
+    show views  in {{ schema }} like 'v_*'
     -- show tables  in {{ relation }}
     -- hive2 has no `show view` command
   {% endcall %}
