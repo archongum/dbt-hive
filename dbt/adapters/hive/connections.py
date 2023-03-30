@@ -283,7 +283,8 @@ class HiveConnectionManager(SQLConnectionManager):
             return HiveConnectionManager.hive_version
 
         try:
-            sql = "select version()"
+            # sql = "select version()"
+            sql = "select '1.2.1'"
             cursor = connection.cursor()
             cursor.execute(sql)
 
@@ -452,4 +453,3 @@ class HiveConnectionManager(SQLConnectionManager):
                     "The config '{}' is required when using the {} method"
                     " to connect to Hive".format(key, method)
                 )
-
